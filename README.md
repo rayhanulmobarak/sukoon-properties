@@ -46,7 +46,43 @@ The compiled Android APK file will be located at:
 ## 📁 Project Directory Structure
 ```
 flutter_app/
-├── android/            # Native Android Gradle configuration & AndroidManifest.xml
+├── android/            # plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+
+android {
+
+    namespace "com.sukoon.properties"
+
+    compileSdk flutter.compileSdkVersion
+
+
+    defaultConfig {
+
+        applicationId "com.sukoon.properties"
+
+        minSdk flutter.minSdkVersion
+
+        targetSdk flutter.targetSdkVersion
+
+        versionCode flutterVersionCode.toInteger()
+
+        versionName flutterVersionName
+
+    }
+
+}
+
+
+
+flutter {
+
+    source "../.."
+
+}Native Android Gradle configuration & AndroidManifest.xml
 ├── ios/                # Native iOS Runner configuration & Info.plist
 ├── assets/             # Brand icons & logo assets
 ├── lib/
