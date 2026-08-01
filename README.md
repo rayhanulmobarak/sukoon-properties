@@ -204,7 +204,297 @@ class _SplashScreenState
 
   }
 
-}Splash, Home, Details, Director, EMI Calculator)
+}Splash, Home,import 'package:flutter/material.dart';
+
+import 'property_details_screen.dart';
+import 'contact_screen.dart';
+import 'booking_screen.dart';
+import 'profile_screen.dart';
+import 'favorites_screen.dart';
+import 'chat_screen.dart';
+import 'blog_screen.dart';
+import 'faq_screen.dart';
+
+
+
+class HomeScreen extends StatelessWidget {
+
+  const HomeScreen({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    return Scaffold(
+
+      appBar: AppBar(
+
+        title:
+            const Text(
+              "Sukoon Properties",
+            ),
+
+      ),
+
+
+
+      drawer: Drawer(
+
+        child: ListView(
+
+          children: [
+
+
+            const DrawerHeader(
+
+              decoration:
+                  BoxDecoration(
+
+                color:
+                    Colors.green,
+
+              ),
+
+              child:
+                  Center(
+
+                child:
+                    Text(
+
+                  "Sukoon Properties",
+
+                  style:
+                      TextStyle(
+
+                    color:
+                        Colors.white,
+
+                    fontSize:
+                        22,
+
+                    fontWeight:
+                        FontWeight.bold,
+
+                  ),
+
+                ),
+
+              ),
+
+            ),
+
+
+
+            menuItem(
+              context,
+              Icons.person,
+              "Profile",
+              const ProfileScreen(),
+            ),
+
+
+            menuItem(
+              context,
+              Icons.favorite,
+              "Favorites",
+              const FavoritesScreen(),
+            ),
+
+
+            menuItem(
+              context,
+              Icons.calendar_month,
+              "Book Site Visit",
+              const BookingScreen(),
+            ),
+
+
+            menuItem(
+              context,
+              Icons.chat,
+              "Live Chat",
+              const ChatScreen(),
+            ),
+
+
+            menuItem(
+              context,
+              Icons.article,
+              "Blog",
+              const BlogScreen(),
+            ),
+
+
+            menuItem(
+              context,
+              Icons.help,
+              "FAQ",
+              const FaqScreen(),
+            ),
+
+
+            menuItem(
+              context,
+              Icons.contact_phone,
+              "Contact",
+              const ContactScreen(),
+            ),
+
+
+          ],
+
+        ),
+
+      ),
+
+
+
+      body:
+          Center(
+
+        child:
+            Column(
+
+          mainAxisAlignment:
+              MainAxisAlignment.center,
+
+
+          children: [
+
+
+            const Icon(
+
+              Icons.home_work,
+
+              size:90,
+
+              color:
+                  Colors.green,
+
+            ),
+
+
+
+            const SizedBox(height:20),
+
+
+
+            const Text(
+
+              "Welcome to Sukoon Properties",
+
+              style:
+                  TextStyle(
+
+                fontSize:22,
+
+                fontWeight:
+                    FontWeight.bold,
+
+              ),
+
+            ),
+
+
+
+            const SizedBox(height:20),
+
+
+
+            ElevatedButton(
+
+              onPressed: () {
+
+
+                Navigator.push(
+
+                  context,
+
+                  MaterialPageRoute(
+
+                    builder:
+                    (context)=>
+                    const PropertyDetailsScreen(),
+
+                  ),
+
+                );
+
+
+              },
+
+              child:
+                  const Text(
+                    "Explore Properties",
+                  ),
+
+            ),
+
+
+          ],
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+
+
+
+  static Widget menuItem(
+
+      BuildContext context,
+
+      IconData icon,
+
+      String title,
+
+      Widget page,
+
+      ) {
+
+
+    return ListTile(
+
+      leading:
+          Icon(icon),
+
+
+      title:
+          Text(title),
+
+
+      onTap: () {
+
+
+        Navigator.push(
+
+          context,
+
+          MaterialPageRoute(
+
+            builder:
+                (context)=>
+                page,
+
+          ),
+
+        );
+
+
+      },
+
+    );
+
+
+  }
+
+
+} Details, Director, EMI Calculator)
 │   ├── theme/          # Custom Emerald & Gold App Theme
 │   └── widgets/        # Reusable Flutter components (PropertyCard, Filters, etc.)
 └── pubspec.yaml        # Flutter dependencies & assets manifest
