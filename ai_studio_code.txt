@@ -1,0 +1,22 @@
+/flutter_app
+├── pubspec.yaml                     # Dependencies & App Config
+├── ios/
+│   └── Runner/Info.plist            # iOS Bundle & Deep Links (com.sukoon.properties)
+├── android/
+│   └── app/
+│       ├── build.gradle             # Android SDK 34 & Package Config
+│       └── src/main/AndroidManifest.xml # Deep Links (sukoonproperties://) & Permissions
+└── lib/
+    ├── main.dart                    # App Entry Point & Theme
+    ├── theme/
+    │   └── app_theme.dart           # Emerald & Gold Luxury Theme
+    ├── models/
+    │   └── property.dart            # Property Data Structure
+    ├── widgets/
+    │   └── property_card.dart       # Reusable Property Card UI
+    └── screens/
+        ├── splash_screen.dart       # Animated Splash Screen
+        ├── main_screen.dart         # Feed, Search & Bottom Navigation
+        ├── property_details_screen.dart # Detailed View with Booking & WhatsApp
+        ├── director_profile_screen.dart # Director Rayhanul Mobarak Profile
+        └── mortgage_calculator_screen.dart # Home Loan & EMI Calculator
