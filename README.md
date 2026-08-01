@@ -544,5 +544,55 @@ class HomeScreen extends StatelessWidget {
 } Details, Director, EMI Calculator)
 │   ├── theme/          # Custom Emerald & Gold App Theme
 │   └── widgets/        # Reusable Flutter components (PropertyCard, Filters, etc.)
-└── pubspec.yaml        # Flutter dependencies & assets manifest
+└── pubspec.yaml        #name: sukoon_properties
+
+description: Sukoon Properties real estate mobile application.
+
+publish_to: "none"
+
+
+version: 1.0.0+1
+
+
+environment:
+
+  sdk: ">=3.0.0 <4.0.0"
+
+
+
+dependencies:
+
+  flutter:
+
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.6
+
+
+  url_launcher: ^6.3.0
+
+
+
+dev_dependencies:
+
+  flutter_test:
+
+    sdk: flutter
+
+
+  flutter_lints: ^3.0.0
+
+
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+
+    - assets/
+    - assets/images/
+    - assets/icons/ Flutter dependencies & assets manifest
 ```
