@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার অটোমেটিক অ্যাপ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: white;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff7e5f;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 অ্যাপটি সফলভাবে অটোমেটিক বিল্ড হয়েছে!</h1>
+        <p>GitHub Actions ব্যবহার করে এটি স্বয়ংক্রিয়ভাবে চালিত হচ্ছে।</p>
+        <button onclick="showMessage()">ক্লিক করুন</button>
+        <h3 id="result" style="margin-top:20px; color:#ffeb3b;"></h3>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('result').innerText = 'অভিনন্দন! আপনার অটোমেটিক অ্যাপ সঠিকভাবে কাজ করছে 🎉';
+        }
+    </script>
+</body>
+</html>

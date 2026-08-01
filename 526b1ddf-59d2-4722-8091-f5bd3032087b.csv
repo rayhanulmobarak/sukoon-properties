@@ -1,0 +1,3 @@
+"""'Workflow""","""'Has job failures""","""'Avg run time""","""'Workflow runs""","""'Jobs"""
+"""'.github/workflows/build_apk.yml""",100.00,81964,72,5
+"""'.github/workflows/webpack.yml""",100.00,33818,5,3
