@@ -52,7 +52,159 @@ flutter_app/
 ├── lib/
 │   ├── main.dart       # Main Flutter entry point
 │   ├── models/         # Data models (Property model with sample data)
-│   ├── screens/        # Flutter Screens (Splash, Home, Details, Director, EMI Calculator)
+│   ├── screens/        # Flutter Screens (import 'dart:async';
+
+import 'package:flutter/material.dart';
+
+import 'home_screen.dart';
+
+
+
+class SplashScreen extends StatefulWidget {
+
+  const SplashScreen({super.key});
+
+
+  @override
+  State<SplashScreen> createState() =>
+      _SplashScreenState();
+
+}
+
+
+
+class _SplashScreenState
+    extends State<SplashScreen> {
+
+
+  @override
+  void initState() {
+
+    super.initState();
+
+
+    Timer(
+
+      const Duration(seconds:3),
+
+      () {
+
+        Navigator.pushReplacement(
+
+          context,
+
+          MaterialPageRoute(
+
+            builder:
+                (context) =>
+                    const HomeScreen(),
+
+          ),
+
+        );
+
+      },
+
+    );
+
+  }
+
+
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    return Scaffold(
+
+      backgroundColor:
+          const Color(0xff0B6B3A),
+
+
+
+      body:
+          Center(
+
+        child:
+            Column(
+
+          mainAxisAlignment:
+              MainAxisAlignment.center,
+
+
+          children: [
+
+
+            const Icon(
+
+              Icons.home,
+
+              size:100,
+
+              color:
+                  Color(0xffC9A227),
+
+            ),
+
+
+
+            const SizedBox(height:20),
+
+
+
+            const Text(
+
+              "Sukoon Properties",
+
+              style:
+                  TextStyle(
+
+                color:
+                    Colors.white,
+
+                fontSize:28,
+
+                fontWeight:
+                    FontWeight.bold,
+
+              ),
+
+            ),
+
+
+
+            const SizedBox(height:10),
+
+
+
+            const Text(
+
+              "Safe • Trusted • Modern Housing",
+
+              style:
+                  TextStyle(
+
+                color:
+                    Colors.white70,
+
+                fontSize:15,
+
+              ),
+
+            ),
+
+
+          ],
+
+        ),
+
+      ),
+
+    );
+
+  }
+
+}Splash, Home, Details, Director, EMI Calculator)
 │   ├── theme/          # Custom Emerald & Gold App Theme
 │   └── widgets/        # Reusable Flutter components (PropertyCard, Filters, etc.)
 └── pubspec.yaml        # Flutter dependencies & assets manifest
