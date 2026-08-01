@@ -1,47 +1,49 @@
-name: Build Flutter APK and AAB
+name: Multi Platform Build
 
 on:
-  push:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-android:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.32.8
-          cache: true
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - run: flutter build appbundle --release
 
-      - name: Flutter Doctor
-        run: flutter doctor -v
-
-      - name: Install dependencies
-        working-directory: flutter_app
-        run: flutter pub get
-
-      - name: Build APK
-        working-directory: flutter_app
-        run: flutter build apk --release
-
-      - name: Build App Bundle
-        working-directory: flutter_app
-        run: flutter build appbundle --release
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+  build-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
         with:
-          name: sukoon-properties-apk
-          path: flutter_app/build/app/outputs/flutter-apk/app-release.apk
+          channel: stable
+      - run: flutter pub get
+      - run: flutter build web
 
-      - name: Upload AAB
-        uses: actions/upload-artifact@v4
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
         with:
-          name: sukoon-properties-aab
-          path: flutter_app/build/app/outputs/bundle/release/app-release.aab
+          channel: stable
+      - run: flutter pub get
+      - run: flutter build windows
+
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter build ios --release --no-codesign
