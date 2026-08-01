@@ -50,7 +50,54 @@ flutter_app/
 ├── ios/                # Native iOS Runner configuration & Info.plist
 ├── assets/             # Brand icons & logo assets
 ├── lib/
-│   ├── main.dart       # Main Flutter entry point
+│   ├── main.dart       # import 'package:flutter/material.dart';
+
+import 'screens/splash_screen.dart';
+import 'theme/app_theme.dart';
+
+
+
+void main() {
+
+  runApp(
+    const SukoonPropertiesApp(),
+  );
+
+}
+
+
+
+class SukoonPropertiesApp extends StatelessWidget {
+
+  const SukoonPropertiesApp({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    return MaterialApp(
+
+      debugShowCheckedModeBanner: false,
+
+
+      title:
+          "Sukoon Properties",
+
+
+      theme:
+          AppTheme.lightTheme,
+
+
+      home:
+          const SplashScreen(),
+
+
+    );
+
+  }
+
+}Main Flutter entry point
 │   ├── models/         # Data models (Property model with sample data)
 │   ├── screens/        # Flutter Screens (import 'dart:async';
 
