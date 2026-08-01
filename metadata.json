@@ -1,0 +1,6 @@
+{
+  "name": "Sukoon Properties",
+  "description": "Enterprise Real Estate & Housing Platform for Sukoon Properties Ltd. (Director: Rayhanul Mobarak), featuring housing & commercial projects, site visit booking, bKash/Nagad/SSLCommerz payments, user portal, CRM dashboard, Admin & Super Admin panels, and multi-language support (EN/BN/AR).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
